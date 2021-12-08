@@ -5,21 +5,29 @@ var result=document.querySelector("#results");
 
 function isMyBirthdayLucky()
 {
+    var dob=DateOfBirth.value;
+    dob=dob.replaceAll("-","");
     var sum=0;
-    while(n>0)
+    
+
+    for(let i=0;i<dob.length;i++)
     {
-        var r=n%10;
-        sum+=r;
-        n=n/10;
+        sum= sum+ Number(dob.charAt(i));
+        
 
     }
-    if(sum%LuckyNumber === 0)
+    // console.log(sum);
+    if(sum%LuckyNumber.value === 0)
     {
-        result.innerText= {LuckyNumber} + "is a lucky number!! 🥳 🥳";
+        result.innerText= "Your birthday is lucky!! 🥳 🥳";
+
+    }
+    else{
+        result.innerText= "Your birthday is not lucky!!";
 
     }
 
-};
+}
 
 buttontranslate.addEventListener("click",isMyBirthdayLucky);
 
