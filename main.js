@@ -16,16 +16,23 @@ function isMyBirthdayLucky()
         
 
     }
-    // console.log(sum);
-    if(sum%LuckyNumber.value === 0)
-    {
-        result.innerText= "Your birthday is lucky!! 🥳 🥳";
-
+    if(LuckyNumber.value<=0){
+        result.style.display="block";
+        result.innerText="The number should be greater than zero";
     }
     else{
-        result.innerText= "Your birthday is not lucky!!";
+        if(sum%LuckyNumber.value === 0)
+        {
+            result.innerText= "Your birthday is lucky!! 🥳 🥳";
+
+        }
+        else{
+            result.innerText= "Your birthday is not lucky!!";
+
+        }
 
     }
+    
 
 }
 
